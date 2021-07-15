@@ -639,7 +639,7 @@ void CoreWrapper::onInit()
 
 	if(rtabmap_.getMemory())
 	{
-		if(useSavedMap_ && !rtabmap_.getMemory()->isIncremental())
+		if(useSavedMap_)
 		{
 			float xMin, yMin, gridCellSize;
 			cv::Mat map = rtabmap_.getMemory()->load2DMap(xMin, yMin, gridCellSize);
@@ -2936,7 +2936,7 @@ bool CoreWrapper::loadDatabaseCallback(rtabmap_ros::LoadDatabase::Request& req, 
 
 	if(rtabmap_.getMemory())
 	{
-		if(useSavedMap_ && !rtabmap_.getMemory()->isIncremental())
+		if(useSavedMap_)
 		{
 			float xMin, yMin, gridCellSize;
 			cv::Mat map = rtabmap_.getMemory()->load2DMap(xMin, yMin, gridCellSize);
